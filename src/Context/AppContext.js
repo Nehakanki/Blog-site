@@ -15,9 +15,22 @@ import { baseUrl } from "../baseUrl";
 
     //data filling 
 
-    async function fetchBlogPosts(page=1){
+    async function fetchBlogPosts(page=1, tag=null, category){
         setLoading(true);//loading ghumega
-        let url= `${baseUrl}?page=${page}`;
+       
+
+        //3 calls
+        //blog , category and tag calls
+     let url= `${baseUrl}?page=${page}`;   //blog
+     
+     if(tag){
+     url+=`&tag=${tag}`};       //tag
+
+     if(category)
+     {
+        url+=`&category=${category}`; //category
+     }
+
 
         try{
                 const result= await fetch(url);

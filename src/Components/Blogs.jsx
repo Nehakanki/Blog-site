@@ -20,7 +20,7 @@ const Blogs = () => {
                 </p>
                 <p>Posted On {post.data}</p>
                 <p>{post.content}</p>
-                <div className='text-blue-600'>{post.tags.map((tag , index)=>{
+                <div className='text-blue-600 underline'>{post.tags.map((tag , index)=>{
                     return <span key={index}>{`#${tag}`}</span>
                 })}</div>
                 
